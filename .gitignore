@@ -5,6 +5,7 @@
 /target/
 **/*.rs.bk
 Cargo.lock
+backend/.git/
 
 # Node.js
 node_modules/
