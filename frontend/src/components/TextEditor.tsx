@@ -2,13 +2,13 @@ import { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 
 const TextEditor = () => {
-  const [text, setText] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const editorRef = useRef<HTMLDivElement>(null);
   
   const handleTextChange = (e: React.FormEvent<HTMLDivElement>) => {
-    setText(e.currentTarget.textContent || '');
+    // We use the contentEditable div directly, no need to track text in state
+    // The content is accessed via editorRef when needed
   };
 
   const getSelectedText = (): { text: string, range: Range } | null => {
@@ -45,10 +45,7 @@ const TextEditor = () => {
         range.deleteContents();
         range.insertNode(document.createTextNode(response.data.paraphrased));
         
-        // Update the state with the new text
-        if (editorRef.current) {
-          setText(editorRef.current.textContent || '');
-        }
+        // No need to update state, the contentEditable div is updated directly
       }
     } catch (err) {
       setError('Failed to paraphrase text. Please try again.');
