@@ -6,7 +6,7 @@ const TextEditor = () => {
   const [error, setError] = useState<string | null>(null);
   const editorRef = useRef<HTMLDivElement>(null);
   
-  const handleTextChange = (e: React.FormEvent<HTMLDivElement>) => {
+  const handleTextChange = () => {
     // We use the contentEditable div directly, no need to track text in state
     // The content is accessed via editorRef when needed
   };
