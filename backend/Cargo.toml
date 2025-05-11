@@ -15,3 +15,14 @@ env_logger = "0.11.2"
 log = "0.4.20"
 anyhow = "1.0.79"
 thiserror = "1.0.57"
+
+# Shuttle dependencies
+shuttle-runtime = "0.54.0"
+shuttle-actix-web = "0.54.0"
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "backend"
+path = "src/main.rs"

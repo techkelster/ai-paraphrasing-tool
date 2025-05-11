@@ -1,0 +1,3 @@
+[shuttle]
+name = "ai-paraphrase-tool"
+description = "A paraphrasing tool using the Gemini AI API" 

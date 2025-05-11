@@ -1,6 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 
+// API URL configuration - will use local backend in development
+// and deployed Shuttle backend in production
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
 const TextEditor = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -35,7 +39,7 @@ const TextEditor = () => {
     setError(null);
     
     try {
-      const response = await axios.post('http://localhost:8080/api/paraphrase', {
+      const response = await axios.post(`${API_BASE_URL}/api/paraphrase`, {
         text: selection.text
       });
       
