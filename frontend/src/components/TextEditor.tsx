@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // API URL configuration - will use local backend in development
 // and deployed Shuttle backend in production
-const API_BASE_URL = import.meta.env.VITE_API_URL;
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://ai-praphrase-backend-mig2.shuttle.app';
 
 const TextEditor = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
