@@ -217,6 +217,7 @@ async fn actix_web(
             .allowed_origin("http://localhost:5173")
             .allowed_origin("http://localhost:5174")
             .allowed_origin("https://ai-paraphrasing-tool-bk0fzhsgh-techkelsters-projects.vercel.app")
+            .allowed_origin("https://ai-paraphrasing-tool.vercel.app")
             .allowed_methods(vec!["GET", "POST"])
             .allowed_headers(vec!["Content-Type"])
             .max_age(3600);
